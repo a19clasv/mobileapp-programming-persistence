@@ -18,8 +18,8 @@ class DatabaseTables {
                     Country.COLUMN_NAME_NATIONAL_DAY + " TEXT," +
                     Country.COLUMN_NAME_CAPITAL + " TEXT)";
 
-    static final String SQL_DELETE_TABLE_MOUNTAIN =
-            // "DROP TABLE IF EXISTS mountain"
+    static final String SQL_DELETE_TABLE_COUNTRY =
+            // "DROP TABLE IF EXISTS country"
             "DROP TABLE IF EXISTS " + Country.TABLE_NAME;
 
 }
