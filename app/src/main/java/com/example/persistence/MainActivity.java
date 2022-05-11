@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button read, write;
+    private Button read, write, delete;
     private TextView display;
     private EditText countryName, countryNationalDay, countryCapital;
 
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         read = findViewById(R.id.Read);
         write = findViewById(R.id.Write);
+        delete = findViewById(R.id.Delete);
         display =findViewById(R.id.Display);
         countryName = findViewById(R.id.Country_name);
         countryNationalDay = findViewById(R.id.Country_national_day);
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         database = databaseHelper.getWritableDatabase();
 
-        deleteAllCountries();
 
         write.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 displayCountries();
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteAllCountries();
             }
         });
     }
