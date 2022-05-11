@@ -12,9 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button read, write;
@@ -74,12 +71,10 @@ public class MainActivity extends AppCompatActivity {
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseTables.Country.COLUMN_NAME_NATIONAL_DAY)),
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseTables.Country.COLUMN_NAME_CAPITAL))
             );
-            text += "Name: " + country.getName() + "National day: " + country.getNationalDay() + "Capital: " + country.getCapital() + "\n";
+            text += "Name: " + country.getName() + " National day: " + country.getNationalDay() + " Capital: " + country.getCapital() + "\n";
         }
         cursor.close();
         display.setText(text);
-        Log.d("MainActivity", "text");
-        Log.d("MainActivity", text + "text");
     }
 
     private void deleteAllCountries() {

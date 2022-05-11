@@ -7,7 +7,7 @@ class DatabaseTables {
         static final String TABLE_NAME = "country";
         static final String COLUMN_NAME_ID = "id";
         static final String COLUMN_NAME_NAME = "name";
-        static final String COLUMN_NAME_NATIONAL_DAY = "national day";
+        static final String COLUMN_NAME_NATIONAL_DAY = "national_day";
         static final String COLUMN_NAME_CAPITAL = "capital";
 
     }
