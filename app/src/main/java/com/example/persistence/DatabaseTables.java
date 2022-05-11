@@ -5,6 +5,7 @@ class DatabaseTables {
     static class Country {
 
         static final String TABLE_NAME = "country";
+        static final String COLUMN_NAME_ID = "id";
         static final String COLUMN_NAME_NAME = "name";
         static final String COLUMN_NAME_NATIONAL_DAY = "national day";
         static final String COLUMN_NAME_CAPITAL = "capital";
@@ -12,9 +13,10 @@ class DatabaseTables {
     }
 
     static final String SQL_CREATE_TABLE_COUNTRY =
-            // "CREATE TABLE mountain (name TEXT PRIMARY KEY, national day TEXT, capital TEXT)"
+            // "CREATE TABLE mountain (id INTEGER PRIMARY KEY, name TEXT, national day TEXT, capital TEXT)"
             "CREATE TABLE " + Country.TABLE_NAME + " (" +
-                    Country.COLUMN_NAME_NAME + " TEXT PRIMARY KEY," +
+                    Country.COLUMN_NAME_ID + " INTEGER PRIMARY KEY," +
+                    Country.COLUMN_NAME_NAME + " TEXT," +
                     Country.COLUMN_NAME_NATIONAL_DAY + " TEXT," +
                     Country.COLUMN_NAME_CAPITAL + " TEXT)";
 

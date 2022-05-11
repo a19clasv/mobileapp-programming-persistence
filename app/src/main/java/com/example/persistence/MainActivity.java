@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         databaseHelper = new DatabaseHelper(this);
         database = databaseHelper.getWritableDatabase();
 
+        deleteAllCountries();
+
         write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         String text = "";
         while (cursor.moveToNext()) {
             Country country = new Country(
+                    cursor.getLong(cursor.getColumnIndexOrThrow(DatabaseTables.Country.COLUMN_NAME_ID)),
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseTables.Country.COLUMN_NAME_NAME)),
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseTables.Country.COLUMN_NAME_NATIONAL_DAY)),
                     cursor.getString(cursor.getColumnIndexOrThrow(DatabaseTables.Country.COLUMN_NAME_CAPITAL))
@@ -77,5 +80,9 @@ public class MainActivity extends AppCompatActivity {
         display.setText(text);
         Log.d("MainActivity", "text");
         Log.d("MainActivity", text + "text");
+    }
+
+    private void deleteAllCountries() {
+        database.delete(DatabaseTables.Country.TABLE_NAME, null, null);
     }
 }
